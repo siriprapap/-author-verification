@@ -8,9 +8,9 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
     body {
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
     </style>
     """,
