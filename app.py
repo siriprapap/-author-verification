@@ -5,18 +5,36 @@ from sentence_transformers import SentenceTransformer, util
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # เพิ่มฟอนต์สวยๆ ด้วย Google Fonts
+# เพิ่มฟอนต์ภาษาไทยจาก Google Fonts
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-    body {
-        font-family: 'Roboto', sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&family=Kanit:wght@400;600&display=swap');
+    
+    /* ฟอนต์หลักสำหรับเนื้อหา */
+    html, body, [class*="css"]  {
+        font-family: 'Sarabun', sans-serif;
+        font-size: 16px;
+    }
+    
+    /* ฟอนต์สำหรับหัวข้อ */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Kanit', sans-serif;
+        font-weight: 600;
+    }
+    
+    /* ฟอนต์สำหรับปุ่มและส่วน Interactive */
+    .stButton>button, .stTextInput>div>div>input {
+        font-family: 'Kanit', sans-serif !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
+# ตัวอย่างการใช้งาน
+st.title("หัวข้อแบบฟอนต์ Kanit")  # จะใช้ Kanit ตามที่กำหนดใน h1
+st.write("เนื้อหาปกติแบบฟอนต์ Sarabun")  # จะใช้ Sarabun
 # ส่วนของแอป
 st.title("ระบบตรวจสอบผู้เขียนอัตโนมัติ (Author Verification)")
 
