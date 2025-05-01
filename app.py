@@ -81,14 +81,6 @@ st.markdown(
 
 # ส่วนหัวแอปพลิเคชัน
 st.title("🖋️ ระบบตรวจสอบผู้เขียนอัตโนมัติ")
-st.markdown("""
-<style>
-div[data-testid="stMarkdownContainer"] p {
-    font-size: 17px !important;
-    color: #555555 !important;
-}
-</style>
-""", unsafe_allow_html=True)
 st.markdown("วิเคราะห์ความคล้ายคลึงของลายลักษณ์อักษรด้วยเทคโนโลยี AI")
 
 # ส่วนป้อนข้อมูล
