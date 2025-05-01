@@ -1,8 +1,29 @@
 import streamlit as st
 from sentence_transformers import SentenceTransformer, util
 
+# โหลดโมเดล
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+# เพิ่มฟอนต์สวยๆ ด้วย Google Fonts
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    h1, h2, h3 {
+        font-family: 'Roboto', sans-serif;
+    }
+    .stTextArea textarea {
+        font-family: 'Roboto', sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# ส่วนของแอป
 st.title("ระบบตรวจสอบผู้เขียนอัตโนมัติ (Author Verification)")
 
 doc1 = st.text_area("เอกสารที่ 1", height=150)
