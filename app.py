@@ -8,15 +8,9 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
     body {
-        font-family: 'Roboto', sans-serif;
-    }
-    h1, h2, h3 {
-        font-family: 'Roboto', sans-serif;
-    }
-    .stTextArea textarea {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
     }
     </style>
     """,
