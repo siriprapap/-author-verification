@@ -32,9 +32,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ตัวอย่างการใช้งาน
-st.title("หัวข้อแบบฟอนต์ Kanit")  # จะใช้ Kanit ตามที่กำหนดใน h1
-st.write("เนื้อหาปกติแบบฟอนต์ Sarabun")  # จะใช้ Sarabun
 # ส่วนของแอป
 st.title("ระบบตรวจสอบผู้เขียนอัตโนมัติ (Author Verification)")
 
