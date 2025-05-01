@@ -1,10 +1,7 @@
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import torch
+from sentence_transformers import SentenceTransformer, util
 
-# โหลด tokenizer และโมเดล
-tokenizer = AutoTokenizer.from_pretrained("model")
-model = AutoModelForSequenceClassification.from_pretrained("all-MiniLM-L6-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
 st.title("ระบบตรวจสอบผู้เขียนอัตโนมัติ (Author Verification)")
 
@@ -13,8 +10,9 @@ doc2 = st.text_area("เอกสารที่ 2", height=150)
 
 if st.button("ตรวจสอบ"):
     with st.spinner("กำลังประมวลผล..."):
-        inputs = tokenizer(doc1 + " [SEP] " + doc2, return_tensors="pt", padding="max_length", truncation=True, max_length=512)
-        outputs = model(**inputs)
-        probs = torch.softmax(outputs.logits, dim=1)
-        score = probs[0][1].item()
-        st.success(f"ความน่าจะเป็นว่าเป็นผู้เขียนคนเดียวกัน: {score:.2f}")
+        emb1 = model.encode(doc1, convert_to_tensor=True)
+        emb2 = model.encode(doc2, convert_to_tensor=True)
+
+        similarity = util.cos_sim(emb1, emb2).item()
+        result = "น่าจะเป็นผู้เขียนคนเดียวกัน" if similarity > 0.7 else "อาจเป็นคนละคนเขียน"
+        st.success(f"{result} (ค่าความคล้าย: {similarity:.2f})")
