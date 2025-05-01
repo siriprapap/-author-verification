@@ -4,7 +4,7 @@ import torch
 
 # โหลด tokenizer และโมเดล
 tokenizer = AutoTokenizer.from_pretrained("model")
-model = AutoModelForSequenceClassification.from_pretrained("model")
+model = AutoModelForSequenceClassification.from_pretrained("all-MiniLM-L6-v2")
 
 st.title("ระบบตรวจสอบผู้เขียนอัตโนมัติ (Author Verification)")
 
